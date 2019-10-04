@@ -1,0 +1,39 @@
+<%= render 'navbar' %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Group</th>
+      <th>Image url</th>
+      <th>Details</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.date %></td>
+        <td><%= event.location %></td>
+        <td><%= event.group.name %></td>
+        <td><%= event.image_url %></td>
+        <td><%= event.details %></td>
+        <td><%= link_to 'Show', group_event_path(@group.id, event.id) %></td>
+        <td><%= link_to 'Edit', edit_group_event_path(@group.id, event.id) %></td>
+        <td><%= link_to 'Destroy', group_event_path(@group.id, event.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_group_event_path(@group.id ) %>

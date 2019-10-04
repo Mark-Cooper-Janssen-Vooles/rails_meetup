@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Photo url:</strong>
+  <%= @user.photo_url %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @user.location %>
+</p>
+
+<p>
+  <strong>Interests:</strong>
+  <%= @user.interests %>
+</p>
+
+<p>
+  <strong>List of groups:</strong>
+  <%= @user.list_of_groups %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @user.date %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

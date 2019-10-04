@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @group.img_url %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @group.user.name %>
+</p>
+
+<p>
+  <strong>Events:</strong>
+    This group has <%= @group.events.length %> events.
+  <br>
+  <%= link_to "View all events for this group", group_events_path(@group.id)%>
+  <br>
+  <br>
+  <% if @group.events.length > 0 %>
+    <% @group.events.each do |e| %>
+    <%= e.name %>
+    <% end %>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
