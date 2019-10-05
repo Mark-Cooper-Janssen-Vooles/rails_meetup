@@ -2,10 +2,9 @@ Rails.application.routes.draw do
   root to: 'groups#index'
 
   resources :groups do
-    resources :events
-    # do
-    #   resources :comments
-    # end
+    resources :events do
+      resources :comments
+    end
   end
   
   resources :users

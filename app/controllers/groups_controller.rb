@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.all.sort
     # @events​ = ​Event​.​where​( ​'article_id = ?'​, ​@article​.​id​ )
   end
 

@@ -2,12 +2,17 @@
 
 <p>
   <strong>Event:</strong>
-  <%= @comment.event %>
+  <%= @comment.event.name %>
 </p>
 
 <p>
   <strong>Date:</strong>
   <%= @comment.date %>
+</p>
+
+<p>
+  <strong>Comment Title:</strong>
+  <%= @comment.title %>
 </p>
 
 <p>
@@ -17,8 +22,8 @@
 
 <p>
   <strong>User:</strong>
-  <%= @comment.user %>
+  <%= @comment.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', group_event_comment_path(@comment) %> |
+<%= link_to 'Back', group_event_comments_path %>
