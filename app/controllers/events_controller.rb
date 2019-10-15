@@ -1,12 +1,19 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :set_group
+  before_action :set_group, only: [:show, :edit, :new, :update, :destroy, :create ]
 
   # GET /events
   # GET /events.json
+
+  def home_index
+    @all_events = Event.all
+    @group = Group.all
+  end
+
   def index
     @group = Group.find(params[:group_id])
     @events = @group.events.all
+    render_to_string
   end
 
   # GET /events/1
@@ -22,7 +29,6 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
-    
   end
 
   # POST /events

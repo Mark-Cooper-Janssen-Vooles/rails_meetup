@@ -1,0 +1,43 @@
+<%= render 'navbar' %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="header">
+  <div>
+    <h1>Find your next event</h1>
+    <span><%= @group.length %> total groups</span> <span>-</span>
+    <span><%= @all_events.length%> events near you</span>
+    <br>
+  </div>
+</div>
+
+<div class="event-home-index">  
+  <p>Date</p>
+  <p>Name of Event</p>
+  <p>Location</p>
+  <p>Group</p>
+  <p>Image_url</p>
+  <p>Details</p>
+  <p># of comments</p>
+  <p>View Event</p>
+  <p>created</p>
+</div>
+
+<% @all_events.each do |event| %>
+  <div class="event-home-index">  
+    <div class="date">
+      <p><%= event.date.strftime("%d/%m/%Y")%></p>
+      <p><%= event.date.strftime("%I:%M %p")%></p>
+    </div>
+    <h1><%= link_to event.name, group_event_path(event.group_id, event.id) %></h1>
+    <p><%= event.location %></p>
+    <p><%= event.group.name %></p>
+    <p><%= event.image_url %></p>
+    <p><%= event.details %></p>
+    <p><%= event.comments.length %> </p>
+    <p><%= link_to 'Show', group_event_path(event.group_id, event.id) %></p>
+    <p><%=time_ago_in_words(event.created_at)%></p>
+  </div>
+    <% end %>
+
+    <%= render 'index1', events: @all_events %>

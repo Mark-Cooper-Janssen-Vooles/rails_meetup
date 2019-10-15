@@ -1,3 +1,37 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+  text-align: center;
+  background: rgb(0, 69, 93);
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 16vh;
+}
+
+.header h1 {
+  margin: 4px;
+}
+
+.header span {
+  color: rgba(199,199,199,0.8)
+}
+
+.event-home-index {
+  background: rgba(182, 182, 182, 0.762);
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  width: 800px;
+}
+
+.event-home-index p {
+  margin: 2px;
+}

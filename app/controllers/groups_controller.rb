@@ -56,10 +56,15 @@ class GroupsController < ApplicationController
   # DELETE /groups/1
   # DELETE /groups/1.json
   def destroy
-    @group.destroy
-    respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
-      format.json { head :no_content }
+    if @group.events.length == 0
+      @group.destroy
+      respond_to do |format|
+        format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else 
+      flash[:notice] = "You have events associated with this group, so you cannot delete it!"
+      redirect_to groups_path
     end
   end
 

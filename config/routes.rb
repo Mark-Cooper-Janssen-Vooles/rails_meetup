@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'groups#index'
+  root to: 'events#home_index'
 
   resources :groups do
     resources :events do

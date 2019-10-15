@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 12vh;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+nav h1 {
+  color: red;
+}
+
+nav .logo {
+  height: 10px;
+}
